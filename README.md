@@ -1,6 +1,9 @@
-# danielcomeau.com V13 Film Swap
+# Daniel Comeau GitHub Pages V14 Clickable
 
-Updated film tags:
-- Replaced Raging Bull with Slumdog Millionaire
-- Replaced There Will Be Blood with Notting Hill
-- Replaced No Country for Old Men with La Haine
+Updated based on feedback from Zed:
+- clickable quick-action tiles
+- clickable experience/project cards
+- copy website link buttons
+- updated visible URL to https://danielcomeau.github.io
+
+Upload/replace index.html on GitHub.

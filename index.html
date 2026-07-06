@@ -4,12 +4,12 @@
   <!-- V8 embedded photos: images are stored directly in this HTML file so they load without an assets folder. -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Daniel S. Comeau | danielcomeau.com</title>
+  <title>Daniel S. Comeau | danielcomeau.github.io</title>
   <meta name="description" content="Daniel S. Comeau — official professional website for project accounting, construction finance, operations, and data analytics." />
-  <link rel="canonical" href="danielcomeau.com/" />
-  <meta property="og:title" content="Daniel S. Comeau | danielcomeau.com" />
+  <link rel="canonical" href="danielcomeau.github.io/" />
+  <meta property="og:title" content="Daniel S. Comeau | danielcomeau.github.io" />
   <meta property="og:description" content="Official professional website for Daniel S. Comeau." />
-  <meta property="og:url" content="danielcomeau.com/" />
+  <meta property="og:url" content="danielcomeau.github.io/" />
   <meta property="og:type" content="website" />
 
   <style>
@@ -974,11 +974,138 @@
       font-size: 14px;
     }
 
+
+    .clickable-card {
+      cursor: pointer;
+      position: relative;
+      transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+    }
+
+    .clickable-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(37, 99, 235, 0.35);
+      box-shadow: 0 22px 50px rgba(7, 29, 51, 0.11);
+    }
+
+    .card-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 18px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .card-action::after {
+      content: "→";
+      transition: transform .16s ease;
+    }
+
+    .clickable-card:hover .card-action::after {
+      transform: translateX(3px);
+    }
+
+    .action-panel {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .action-tile {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: white;
+      padding: 18px;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(7, 29, 51, 0.05);
+      transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+    }
+
+    .action-tile:hover {
+      transform: translateY(-2px);
+      border-color: rgba(37, 99, 235, 0.35);
+      box-shadow: 0 18px 42px rgba(7, 29, 51, 0.10);
+    }
+
+    .action-tile span {
+      display: block;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .action-tile strong {
+      display: block;
+      color: var(--navy);
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    .copy-button {
+      appearance: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%) translateY(20px);
+      opacity: 0;
+      pointer-events: none;
+      background: var(--navy);
+      color: white;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: var(--shadow);
+      transition: opacity .18s ease, transform .18s ease;
+      z-index: 999;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .section-jump {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .section-jump a {
+      min-height: 38px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid var(--border);
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .section-jump a:hover {
+      background: white;
+      box-shadow: 0 10px 24px rgba(7, 29, 51, 0.08);
+    }
+
     @media (max-width: 1040px) {
       .hero-inner,
       .learning-grid,
       .project-grid,
-      .two-col {
+      .two-col,
+      .action-panel {
         grid-template-columns: 1fr;
       }
 
@@ -1078,7 +1205,8 @@
 
       .course-grid,
       .photo-grid,
-      .culture-grid {
+      .culture-grid,
+      .action-panel {
         grid-template-columns: 1fr;
       }
 
@@ -1105,7 +1233,7 @@
         <span class="brand-mark">DC</span>
         <span class="brand-text">
           <strong>Daniel S. Comeau</strong>
-          <span>danielcomeau.com</span>
+          <span>danielcomeau.github.io</span>
         </span>
       </a>
 
@@ -1134,11 +1262,20 @@
             <a class="button primary" href="Daniel_Comeau_Resume_2026.pdf" target="_blank" rel="noopener">Download Resume</a>
             <a class="button secondary" href="https://www.linkedin.com/in/daniel-comeau22/" target="_blank" rel="noopener">LinkedIn Profile</a>
             <a class="button secondary" href="mailto:dscomeau22@gmail.com">Email Daniel</a>
+            <button class="button secondary copy-button" type="button" data-copy="https://danielcomeau.github.io">Copy Website Link</button>
           </div>
         
           <div class="clean-url">
-            <span>Professional website</span>
-            <strong>danielcomeau.com</strong>
+            <span>Live GitHub Pages link</span>
+            <strong>danielcomeau.github.io</strong>
+          </div>
+
+          <div class="section-jump" aria-label="Quick website links">
+            <a href="#experience">Experience</a>
+            <a href="#projects">Project Work</a>
+            <a href="#learning">Courses</a>
+            <a href="#reading-film">Reading & Film</a>
+            <a href="#contact">Contact</a>
           </div>
         </div>
 
@@ -1188,6 +1325,25 @@
       </div>
     </section>
 
+    <section class="container action-panel" aria-label="Portfolio quick actions">
+      <a class="action-tile" href="Daniel_Comeau_Resume_2026.pdf" target="_blank" rel="noopener">
+        <span>Resume</span>
+        <strong>Download PDF</strong>
+      </a>
+      <a class="action-tile" href="#projects">
+        <span>Project Work</span>
+        <strong>View Hunts Point and operations proof points</strong>
+      </a>
+      <a class="action-tile" href="#learning">
+        <span>Learning</span>
+        <strong>Review courses and finance resources</strong>
+      </a>
+      <a class="action-tile" href="mailto:dscomeau22@gmail.com">
+        <span>Contact</span>
+        <strong>Email Daniel directly</strong>
+      </a>
+    </section>
+
     <section id="experience" class="section">
       <div class="container">
         <div class="section-head">
@@ -1196,7 +1352,7 @@
         </div>
 
         <div class="experience-stack">
-          <article class="card">
+          <article class="card clickable-card" onclick="location.href='#projects'">
             <div class="role-head">
               <div>
                 <h3>Hudson Meridian Construction Group</h3>
@@ -1214,9 +1370,10 @@
               <li>Budget Tracking</li>
               <li>Cost Controls</li>
             </ul>
+                      <a class="card-action" href="#projects" onclick="event.stopPropagation()">View related project work</a>
           </article>
 
-          <article class="card">
+          <article class="card clickable-card" onclick="location.href='#capabilities'">
             <div class="role-head">
               <div>
                 <h3>RSM Facility Solutions</h3>
@@ -1233,9 +1390,10 @@
               <li>Reporting</li>
               <li>Workflow Systems</li>
             </ul>
+                      <a class="card-action" href="#capabilities" onclick="event.stopPropagation()">View capabilities</a>
           </article>
 
-          <article class="card">
+          <article class="card clickable-card" onclick="location.href='#learning'">
             <div class="role-head">
               <div>
                 <h3>MLB Network & NHL Network</h3>
@@ -1252,6 +1410,7 @@
               <li>Broadcast Support</li>
               <li>Written Summaries</li>
             </ul>
+                      <a class="card-action" href="#learning" onclick="event.stopPropagation()">View analytics learning</a>
           </article>
         </div>
       </div>
@@ -1315,17 +1474,20 @@
           </article>
 
           <div class="side-projects">
-            <article class="card">
+            <article class="card clickable-card" onclick="location.href='#contact'">
               <h3>Requisition and invoice workflows</h3>
               <p>Reviewed project-cost materials, tracked approval movement, and connected accounting tasks to project execution requirements.</p>
+              <a class="card-action" href="#contact" onclick="event.stopPropagation()">Discuss project controls roles</a>
             </article>
-            <article class="card">
+            <article class="card clickable-card" onclick="location.href='#capabilities'">
               <h3>Client onboarding and operations reporting</h3>
               <p>Supported portal setup, third-party platform workflows, pricing/work-order data, and account-executive reporting packages.</p>
+              <a class="card-action" href="#capabilities" onclick="event.stopPropagation()">View systems strengths</a>
             </article>
-            <article class="card">
+            <article class="card clickable-card" onclick="location.href='#learning'">
               <h3>Real-time analytics environment</h3>
               <p>Built early-career discipline in a live media setting where accuracy, speed, judgment, and written communication mattered.</p>
+              <a class="card-action" href="#learning" onclick="event.stopPropagation()">View analytics learning</a>
             </article>
           </div>
         </div>
@@ -1638,8 +1800,8 @@
           
           <div class="application-url-card">
             <span>Clean URL for Indeed / job applications</span>
-            <strong>danielcomeau.com</strong>
-            <p>Exact spelling: <strong style="font-size:inherit; letter-spacing:normal;">danielcomeau.com</strong>. The link will not open until the domain is purchased and connected to hosting.</p>
+            <strong>danielcomeau.github.io</strong>
+            <p>Exact spelling: <strong style="font-size:inherit; letter-spacing:normal;">danielcomeau.github.io</strong>. This is the live GitHub Pages URL for applications.</p>
           </div>
 
           <div class="actions">
@@ -1647,6 +1809,7 @@
             <a class="button secondary" href="tel:+12019949137">201-994-9137</a>
             <a class="button secondary" href="https://www.linkedin.com/in/daniel-comeau22/" target="_blank" rel="noopener">LinkedIn</a>
             <a class="button secondary" href="Daniel_Comeau_Resume_2026.pdf" target="_blank" rel="noopener">Resume PDF</a>
+            <button class="button secondary copy-button" type="button" data-copy="https://danielcomeau.github.io">Copy Website Link</button>
           </div>
         </div>
       </div>
@@ -1655,8 +1818,27 @@
 
   <footer class="footer">
     <div class="container">
-      <p>© 2026 Daniel S. Comeau · danielcomeau.com</p>
+      <p>© 2026 Daniel S. Comeau · danielcomeau.github.io</p>
     </div>
   </footer>
+
+  <div class="toast" id="copyToast">Website link copied</div>
+
+  <script>
+    document.querySelectorAll('[data-copy]').forEach(function(button) {
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+        var text = button.getAttribute('data-copy');
+        navigator.clipboard.writeText(text).then(function() {
+          var toast = document.getElementById('copyToast');
+          toast.classList.add('show');
+          setTimeout(function(){ toast.classList.remove('show'); }, 1800);
+        }).catch(function() {
+          alert('Copy this link: ' + text);
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>
