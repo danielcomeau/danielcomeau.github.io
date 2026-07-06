@@ -1,15 +1,12 @@
-# Daniel Comeau GitHub Pages V17 Finance Files
+# Daniel Comeau GitHub Pages V19 MIT/Harvard AI
 
 Updates:
-- Added Project Finance PPP Presentation as a downloadable portfolio/finance resource.
-- Added The Arbitrage Theory of Capital Asset Pricing as a downloadable capital markets paper.
-- Kept CFA Formula Sheet.
-- Updated quick-action tiles and Professional Development cards.
+- Removed NVIDIA courses.
+- Removed broad “Free AI Courses from Google, Harvard, MIT, Microsoft, and IBM.”
+- Added only two AI courses at the end:
+  1. Artificial Intelligence — MIT OpenCourseWare
+  2. CS50’s Introduction to Artificial Intelligence with Python — Harvard
+- Preserved finance/accounting/cash flow resources above the AI courses.
 
-Upload/replace these files at the root of the GitHub repo:
-- index.html
-- Daniel_Comeau_Resume_2026.pdf
-- CFA_Formula_Sheet.pdf
-- Project_Finance_PPP_Presentation.pptx
-- Arbitrage_Theory_of_Capital_Asset_Pricing.pdf
-- README.md optional
+Upload/replace index.html at the root of the GitHub repo.
+Also keep the linked PDFs/PPTX files at the root.
