@@ -1,9 +1,9 @@
-# Daniel Comeau GitHub Pages V14 Clickable
+# Daniel Comeau GitHub Pages V15 Film Adjust
 
-Updated based on feedback from Zed:
-- clickable quick-action tiles
-- clickable experience/project cards
-- copy website link buttons
-- updated visible URL to https://danielcomeau.github.io
-
-Upload/replace index.html on GitHub.
+Updates:
+- Removed “crime dramas” wording from the film section.
+- Added Forrest Gump.
+- Added Crazy, Stupid, Love.
+- Added Margin Call.
+- Added The Big Short.
+- Kept clickable/interactive V14 features.
